@@ -4,7 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 export default function Tela2() {
   return (
     <View style={styles.container}>
-      <Text>TELA2</Text>
+      <Text style={styles.title}>Tela 2</Text>
       <StatusBar style="auto" />
     </View>
   );
@@ -13,8 +13,15 @@ export default function Tela2() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#f0f4f8',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 20,
+  },
+  title: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 20,
   },
 });

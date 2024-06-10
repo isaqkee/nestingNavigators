@@ -1,21 +1,32 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
+import React, { useState } from 'react';
 
 
-export default function Tela1() {
+export default function Tela1({ textoPronto, textoPronto2 }) {
+    const [input, setInput] = useState('');
+    const [input2, setInput2] = useState('');
+
+    function passarTexto(input) {
+        setInput(input);
+        textoPronto(input);
+
+    }
+    function passarTexto2(input2) {
+        setInput2(input2);
+        textoPronto2(input2);
+    }
 
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Tela 1</Text>
             <TextInput
-                placeholder='Digite algo aqui'
-                style={styles.input}
-                placeholderTextColor="#888"
+                value={input}
+                onChangeText={passarTexto}
             />
             <TextInput
-                placeholder='Digite algo aqui'
-                style={styles.input}
-                placeholderTextColor="#888"
+                value={input2}
+                onChangeText={passarTexto2}
             />
             <StatusBar style="auto" />
         </View>
